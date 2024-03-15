@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Background Page</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="content">
+        <h1 class="heading">Welcom Welcome</h1>
+        <h2>Apna Shubh nam bataye</h2>
+        <form id="nameForm" method="get">
+            <input type="text" id="nameInput" name="name" placeholder="Bol" required><br>
+            <button type="submit" class="continue-btn">Continue</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // JavaScript code to store the name in session storage and redirect to bf.html
+    document.getElementById("nameForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        // Get the value of the input field
+        var name = document.getElementById("nameInput").value;
+        
+        // Store the name in session storage
+        sessionStorage.setItem("name", name);
+        
+        // Log the name to the console
+        console.log("Name stored in session storage: " + name);
+        
+        // Redirect to bf.html
+        window.location.href = "bf.html";
+    });
+</script>
+
+</body>
+</html>

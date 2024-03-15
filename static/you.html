@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Background Page</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="content">
+        <h1 class="heading" id="userNameHeading"></h1>
+        <img id="userImage" src="" alt=""><br>
+        <a href="date.html" class="continue-btn">Yes</a>
+        <a href="boy.html" class="continue-btn">No</a>
+    </div>
+</div>
+
+<script>
+    // Get the name from session storage
+    var name = sessionStorage.getItem("name");
+    
+    // Set the heading text to the user's name
+    document.getElementById("userNameHeading").textContent = name + " is this you";
+    
+    // Set the src attribute of the image dynamically
+    var imageSrc = "../assets/" + name + ".jpg";
+    document.getElementById("userImage").src = imageSrc;
+</script>
+
+</body>
+</html>
