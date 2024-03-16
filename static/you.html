@@ -18,15 +18,21 @@
 </div>
 
 <script>
-    // Get the name from session storage
     var name = sessionStorage.getItem("name");
     
-    // Set the heading text to the user's name
     document.getElementById("userNameHeading").textContent = name + " is this you";
     
-    // Set the src attribute of the image dynamically
     var imageSrc = "../assets/" + name + ".jpg";
-    document.getElementById("userImage").src = imageSrc;
+    
+    var img = new Image();
+    img.onload = function() {
+        document.getElementById("userImage").src = imageSrc;
+    };
+    img.onerror = function() {
+        document.getElementById("userImage").src = "https://dq0hsqwjhea1.cloudfront.net/Seronik-Full-Moon-1-1-800x600.jpg";
+    };
+    // Set the source of the image object
+    img.src = imageSrc;
 </script>
 
 </body>
